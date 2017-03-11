@@ -59,6 +59,8 @@
 #include "CFG_file_public.h"
 #include "CFG_file_lid.h"
 #include "Custom_NvRam_LID.h"
+#include "../cfgfileinc/CFG_Custom1_File.h"
+#include "../cfgdefault/CFG_Custom1_Default.h"
 //#include "../../../custom/common/cgen/cfgfileinc/CFG_AUDIO_File.h"
 //#include "../../../custom/common/cgen/cfgdefault/CFG_Audio_Default.h"
 #include "../cfgfileinc/CFG_AUDIO_File.h"
@@ -69,6 +71,10 @@
 #include "../cfgdefault/CFG_WIFI_Default.h"
 #include "../cfgfileinc/CFG_PRODUCT_INFO_File.h"
 #include "../cfgdefault/CFG_PRODUCT_INFO_Default.h"
+//<<hct:liuyang add @#20130105
+#include "../cfgfileinc/CFG_Custom_FMT_File.h"
+#include "../cfgdefault/CFG_Custom_FMT_Default.h"
+//hct:liuyang
 #include <stdio.h>
 #ifdef __cplusplus
 extern "C"
@@ -171,6 +177,24 @@ extern "C"
         },
         { "/data/nvram/APCFG/APRDCL/Audio_HAC_Param",   VER(AP_CFG_RDCL_FILE_AUDIO_HAC_PARAM_LID), CFG_FILE_SPEECH_HAC_PARAM_SIZE,
             CFG_FILE_SPEECH_HAC_PARAM_TOTAL, SIGNLE_DEFUALT_REC  ,    (char *)&speech_hac_param_custom_default, DataReset , NULL
+        },
+        //<<hct:liuyang add @#20130105
+        {
+            "/data/nvram/APCFG/APRDEB/Custom_FMT", 		VER(AP_CFG_CUSTOM_FILE_CUSTOM_FMT_LID),			   CFG_FILE_CUSTOM_FMT_SIZE,
+            CFG_FILE_CUSTOM_FMT_TOTAL,					SIGNLE_DEFUALT_REC, 			   (char *)&stCustomFMTDefault, DataReset , NULL
+        },
+        {
+            "/data/nvram/APCFG/APRDEB/Custom_FMT_1",		VER(AP_CFG_CUSTOM_FILE_CUSTOM_FMT_1_LID), 		   CFG_FILE_CUSTOM_FMT_1_SIZE,
+            CFG_FILE_CUSTOM_FMT_1_TOTAL,					SIGNLE_DEFUALT_REC, 			   (char *)&stCustomFMT1Default, DataReset , NULL
+        },
+        {
+            "/data/nvram/APCFG/APRDEB/Custom_SNum",		VER(AP_CFG_CUSTOM_FILE_CUSTOM_SNUM_LID),		   CFG_FILE_CUSTOM_SERIALNUMBER_SIZE,
+            CFG_FILE_CUSTOM_SERIALNUMBER_TOTAL,				SIGNLE_DEFUALT_REC, 			   (char *)&stCustomSerialNumberDefault, DataReset , NULL
+        },
+        //hct:liuyang		
+		{ 
+            "/data/nvram/APCFG/APRDEB/CUSTOM1",       		VER(AP_CFG_CUSTOM_FILE_CUSTOM1_LID),         	CFG_FILE_CUSTOM1_REC_SIZE,
+            CFG_FILE_CUSTOM1_REC_TOTAL,                   	DEFAULT_ZERO,                                   (char *)&stCustom1Default, DataReset, NULL
         },
         { "/data/nvram/APCFG/APRDCL/Audio_Sph_Lpbk",   VER(AP_CFG_RDCL_FILE_AUDIO_SPEECH_LPBK_PARAM_LID), CFG_FILE_SPEECH_LPBK_PARAM_SIZE,
             CFG_FILE_SPEECH_LPBK_PARAM_TOTAL, SIGNLE_DEFUALT_REC  ,    (char *)&speech_lpbk_param_custom_default, DataReset , NULL

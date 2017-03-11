@@ -3,7 +3,7 @@
 
 typedef struct
 {
-	unsigned int Array[1];
+	unsigned char auMacAddr[6];
 }File_Custom1_Struct;
 
 #define CFG_FILE_CUSTOM1_REC_SIZE    sizeof(File_Custom1_Struct)

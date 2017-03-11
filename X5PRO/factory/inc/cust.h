@@ -38,7 +38,7 @@
 #define FEATURE_FTM_BACKLIGHT
 
 #define FEATURE_FTM_LCD
-//#define FEATURE_FTM_LED
+#define FEATURE_FTM_LED
 #define FEATURE_FTM_BACKLIGHT
 #define FEATURE_FTM_EMMC
 #define FEATURE_FTM_CLEAREMMC
@@ -62,6 +62,7 @@
 //Add SMT RF Test
 #define FEATURE_FTM_RF
 #define FEATURE_FTM_BTS
+
 #include "cust_font.h"		/* common part */
 #include "cust_keys.h"		/* custom part */
 #include "cust_lcd.h"		/* custom part */
